@@ -366,7 +366,8 @@ function bar(p, width = 12) {
     return "█".repeat(cells) + "·".repeat(width - cells);
 }
 function shortOption(label, max = 28) {
-    const s = label.length > max ? label.slice(0, max - 1) + "…" : label;
+    const raw = typeof label === "string" ? label : JSON.stringify(label) ?? "";
+    const s = raw.length > max ? raw.slice(0, max - 1) + "…" : raw;
     return s.replace(/\s+/g, " ");
 }
 function levelText(level) {
