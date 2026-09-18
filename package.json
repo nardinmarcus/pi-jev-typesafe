@@ -1,0 +1,65 @@
+{
+  "name": "pi-typesafe-jev",
+  "version": "0.1.0",
+  "description": "TypeSafe Jev (System One judgments) for Pi: zero-dependency jev_ask tool with question linting, model discovery, probability-bar rendering, and daily budget caps.",
+  "type": "module",
+  "license": "MIT",
+  "author": "nardinmarcus",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nardinmarcus/pi-typesafe-jev.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nardinmarcus/pi-typesafe-jev/issues"
+  },
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "typesafe",
+    "jev",
+    "system-one",
+    "structured-decisions"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "files": [
+    "extensions",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "pi": {
+    "extensions": [
+      "./extensions/index.js"
+    ]
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "check": "npm run typecheck && npm test",
+    "prepack": "npm run check && npm run build"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*",
+    "typebox": "*"
+  },
+  "peerDependenciesMeta": {
+    "@earendil-works/pi-ai": { "optional": true },
+    "@earendil-works/pi-coding-agent": { "optional": true },
+    "@earendil-works/pi-tui": { "optional": true },
+    "typebox": { "optional": true }
+  },
+  "devDependencies": {
+    "@earendil-works/pi-ai": "^0.85.1",
+    "@earendil-works/pi-coding-agent": "0.85.1",
+    "@earendil-works/pi-tui": "^0.85.1",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.23.13",
+    "typebox": "^1.3.31",
+    "typescript": "^6.0.0"
+  }
+}
