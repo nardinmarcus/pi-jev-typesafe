@@ -1,4 +1,4 @@
-// pi-typesafe-jev — TypeSafe Jev (System One judgment model) for Pi.
+// pi-jev-typesafe — TypeSafe Jev (System One judgment model) for Pi.
 //
 // Zero-dependency by design: pi bundles typebox / pi-tui / pi-ai, and the API is
 // a single documented endpoint (POST /v1/systemone, GET /v1/models), so plain
@@ -74,7 +74,7 @@ function resolveKey() {
 // ---------------------------------------------------------------------------
 // Budget: per-session attempt counter + persisted daily counters and caps
 // ---------------------------------------------------------------------------
-const STATE_DIR = join(homedir(), ".pi", "agent", "pi-typesafe-jev");
+const STATE_DIR = join(homedir(), ".pi", "agent", "pi-jev-typesafe");
 const USAGE_FILE = join(STATE_DIR, "usage.json");
 function today() {
     const d = new Date();
