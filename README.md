@@ -11,7 +11,7 @@ Independent project. Not affiliated with TypeSafe AI or the Pi authors.
 ## Install
 
 ```bash
-pi install npm:pi-typesafe-jev
+pi install npm:@nardinmarcus/pi-typesafe-jev
 # or from git:
 pi install git:github.com/nardinmarcus/pi-typesafe-jev@v0.1.0
 # or from a local checkout:
@@ -71,7 +71,7 @@ Question text is the whole program: Jev answers exactly what is asked, and ambig
 Internal helpers are exported for reuse and testing:
 
 ```ts
-import { validateRequest, lintRequest, prepareArguments, formatResult } from "pi-typesafe-jev";
+import { validateRequest, lintRequest, prepareArguments, formatResult } from "@nardinmarcus/pi-typesafe-jev";
 ```
 
 ## How it differs from pi-typesafe
