@@ -1,6 +1,6 @@
 {
   "name": "pi-jev-typesafe",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "TypeSafe Jev (System One judgments) for Pi: zero-dependency jev_ask tool with question linting, model discovery, probability-bar rendering, and daily budget caps.",
   "type": "module",
   "license": "MIT",

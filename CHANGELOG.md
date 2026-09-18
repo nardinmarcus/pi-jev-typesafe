@@ -1,6 +1,12 @@
 # Changelog
 
+## 0.1.1 — 2026-09-19
+
+- Fix: score answers whose `legend` is an object or number (as Jev can return) crashed result formatting with "s.replace is not a function"; values are now safely stringified.
+- Regression test for non-string legend.
+
 ## 0.1.0 — 2026-09-19
+
 
 Initial release.
 

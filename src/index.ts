@@ -74,7 +74,7 @@ export interface JevAnswer {
 	noul?: number;
 	confidence?: number;
 	probabilities?: Record<string, number>;
-	legend?: string;
+	legend?: string | number;
 }
 
 export interface JevResult {
@@ -421,8 +421,9 @@ function bar(p: number, width = 12): string {
 	return "█".repeat(cells) + "·".repeat(width - cells);
 }
 
-function shortOption(label: string, max = 28): string {
-	const s = label.length > max ? label.slice(0, max - 1) + "…" : label;
+function shortOption(label: unknown, max = 28): string {
+	const raw = typeof label === "string" ? label : JSON.stringify(label) ?? "";
+	const s = raw.length > max ? raw.slice(0, max - 1) + "…" : raw;
 	return s.replace(/\s+/g, " ");
 }
 

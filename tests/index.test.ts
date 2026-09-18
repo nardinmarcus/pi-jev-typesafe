@@ -169,7 +169,7 @@ const SAMPLE_RESULT: JevResult = {
 	answers: {
 		category: { type: "choice", choice: "billing", confidence: 1, probabilities: { billing: 1, technical: 0, other: 0 } },
 		urgent: { type: "noul", noul: 0.93 },
-		frustration: { type: "score", score: 1, confidence: 0.7, probabilities: { "0": 0.1, "1": 0.8, "2": 0.1 }, legend: "Frustrated" },
+		frustration: { type: "score", score: 1, confidence: 0.7, probabilities: { "0": 0.1, "1": 0.8, "2": 0.1 }, legend: 1 },
 	},
 };
 
@@ -178,7 +178,7 @@ test("formatResult shows answers, bars, and lint lines", () => {
 	assert.match(text, /jev · jev-1\.13\.0 · 812ms · 349 tok in/);
 	assert.match(text, /category: billing · conf 1\.00/);
 	assert.match(text, /urgent: P\(yes\) █+·* 0\.930/);
-	assert.match(text, /frustration: 1 "Frustrated" · conf 0\.70/);
+	assert.match(text, /frustration: 1 "Frustrated" · conf 0\.70 · 1/); // numeric legend coerced, no crash
 	assert.match(text, /lint: choice "category" has no no-match option/);
 	assert.match(text, /Confidence is distribution concentration/);
 });
