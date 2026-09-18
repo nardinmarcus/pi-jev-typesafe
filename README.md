@@ -1,4 +1,4 @@
-# pi-typesafe-jev
+# pi-jev-typesafe
 
 **TypeSafe Jev inside [Pi](https://pi.dev).** Jev is TypeSafe's System One judgment model: send it some state and typed questions, get calibrated probabilities back in about a second, for a fraction of a cent. This package gives Pi one thing done carefully:
 
@@ -11,11 +11,11 @@ Independent project. Not affiliated with TypeSafe AI or the Pi authors.
 ## Install
 
 ```bash
-pi install npm:@nardinmarcus/pi-typesafe-jev
+pi install npm:pi-jev-typesafe
 # or from git:
-pi install git:github.com/nardinmarcus/pi-typesafe-jev@v0.1.0
+pi install git:github.com/nardinmarcus/pi-jev-typesafe@v0.1.0
 # or from a local checkout:
-pi install /path/to/pi-typesafe-jev
+pi install /path/to/pi-jev-typesafe
 ```
 
 Requires Pi 0.85+ and Node.js 22+. Zero runtime dependencies — pi bundles everything the extension imports (`typebox`, `pi-ai`, `pi-tui`).
@@ -51,7 +51,7 @@ Question text is the whole program: Jev answers exactly what is asked, and ambig
 ## Budget and safety
 
 - Per session: 20 attempts by default (`PI_TYPESAFE_JEV_MAX_REQUESTS`), reset on session start/reload.
-- Per day (persisted in `~/.pi/agent/pi-typesafe-jev/usage.json`, rolls over at local midnight):
+- Per day (persisted in `~/.pi/agent/pi-jev-typesafe/usage.json`, rolls over at local midnight):
   - `PI_TYPESAFE_JEV_MAX_REQUESTS_PER_DAY`
   - `PI_TYPESAFE_JEV_MAX_INPUT_TOKENS_PER_DAY`
   - `PI_TYPESAFE_JEV_MAX_USD_PER_DAY` (input tokens only — output is free)
@@ -71,14 +71,14 @@ Question text is the whole program: Jev answers exactly what is asked, and ambig
 Internal helpers are exported for reuse and testing:
 
 ```ts
-import { validateRequest, lintRequest, prepareArguments, formatResult } from "@nardinmarcus/pi-typesafe-jev";
+import { validateRequest, lintRequest, prepareArguments, formatResult } from "pi-jev-typesafe";
 ```
 
 ## How it differs from pi-typesafe
 
 [pi-typesafe](https://github.com/DevMortimer/pi-typesafe) is an excellent, more feature-complete package (login/key store, playground, calibrate toolkit, chunked fan-out). This package takes a leaner cut with different emphases:
 
-| | pi-typesafe | pi-typesafe-jev |
+| | pi-typesafe | pi-jev-typesafe |
 | --- | --- | --- |
 | Dependencies | 2 + 2 peers | **0** (pi-bundled peers only) |
 | Model discovery | — | `/jev models`, alias guidance |
