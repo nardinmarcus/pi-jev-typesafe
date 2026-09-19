@@ -4,10 +4,6 @@
 // a single documented endpoint (POST /v1/systemone, GET /v1/models), so plain
 // fetch suffices — nothing to npm install, nothing to build (pi loads TS via jiti).
 //
-// Distinctions vs. pi-typesafe (DevMortimer): model discovery (/jev models),
-// per-request model with alias guidance, question linting before submission,
-// probability-bar rendering, one retry on transient failures, hub-owned source.
-//
 // Security posture (same discipline): submitted state/questions go only to
 // api.typesafe.ai; error messages never contain upstream bodies, headers, keys,
 // or submitted content; the API key is never logged or echoed.

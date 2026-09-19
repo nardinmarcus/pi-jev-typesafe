@@ -74,21 +74,6 @@ Internal helpers are exported for reuse and testing:
 import { validateRequest, lintRequest, prepareArguments, formatResult } from "pi-jev-typesafe";
 ```
 
-## How it differs from pi-typesafe
-
-[pi-typesafe](https://github.com/DevMortimer/pi-typesafe) is an excellent, more feature-complete package (login/key store, playground, calibrate toolkit, chunked fan-out). This package takes a leaner cut with different emphases:
-
-| | pi-typesafe | pi-jev-typesafe |
-| --- | --- | --- |
-| Dependencies | 2 + 2 peers | **0** (pi-bundled peers only) |
-| Model discovery | — | `/jev models`, alias guidance |
-| Question linting | — | no-match options, vague score levels, short instructions |
-| Result rendering | text list | probability bars (expanded distributions) |
-| Transient retries | none | one backoff retry on 429/5xx/network |
-| Ownership | npm-published | open source, PRs welcome |
-
-If you want the key store, playground, and calibration tooling, use pi-typesafe — the two packages' tools can coexist (disable one via `pi config`).
-
 ## Development
 
 ```bash
